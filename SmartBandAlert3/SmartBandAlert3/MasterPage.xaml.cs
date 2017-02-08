@@ -43,17 +43,17 @@ namespace SmartBandAlert3
 
             });
 
-            /*masterPageItems.Add(new MasterPageItem
+            masterPageItems.Add(new MasterPageItem
             {
 
-                Title = "Reminders",
+                Title = "GPSTest",
 
                 IconSource = "reminders.png",
 
-                TargetType = typeof(ReminderPage)
+                TargetType = typeof(GPStestPage)
 
             });
-            */
+            
 
 
             listView.ItemsSource = masterPageItems;

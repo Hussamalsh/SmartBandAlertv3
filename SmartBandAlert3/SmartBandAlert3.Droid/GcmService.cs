@@ -100,7 +100,7 @@ namespace SmartBandAlert3.Droid
             string message = intent.Extras.GetString("message");
             if (!string.IsNullOrEmpty(message))
             {
-                CreateNotification("New todo item!", "Todo item: " + message);
+                CreateNotification("New Test!", "SmartBandAlert: " + message);
             }
         }
 

@@ -18,7 +18,7 @@ namespace SmartBandAlert3.Data
 
         Task SaveTodoItemAsync(User item, bool isNewItem);
 
-
+        Task SaveVictimAsync(Victim item, bool isNewItem);
 
         Task DeleteTodoItemAsync(String userid, long friendid);
 

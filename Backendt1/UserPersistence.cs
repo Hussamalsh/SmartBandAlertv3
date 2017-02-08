@@ -169,7 +169,7 @@ namespace Backendt1
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                 cmd.ExecuteNonQuery();
 
-                long fbid = cmd.LastInsertedId;
+                //long fbid = cmd.LastInsertedId;
                 return personToSave.FBID;
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)

@@ -223,14 +223,17 @@
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VictimController.cs" />
     <Compile Include="DataObjects\Friends.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="DataObjects\User.cs" />
+    <Compile Include="DataObjects\Victim.cs" />
     <Compile Include="FriendsPersistence.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UserPersistence.cs" />
+    <Compile Include="VictimPersistence.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />

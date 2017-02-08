@@ -37,6 +37,7 @@ namespace SmartBandAlert3
 
         public static UserManager UserManager { get; private set; }
         public static FriendsManager FriendsManager { get; private set; }
+        public static VictimManager VictimManager { get; private set; }
         readonly IProfileManager _profileManager;
         Profile _profile;
 
@@ -58,6 +59,7 @@ namespace SmartBandAlert3
 
             UserManager = new UserManager(new RestService());
             FriendsManager = new FriendsManager(new RestService());
+            VictimManager = new VictimManager(new RestService());
 
             IProfileManager profileManager = new ProfileManager();
             _profileManager = profileManager;

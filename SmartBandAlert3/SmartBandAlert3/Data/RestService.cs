@@ -109,5 +109,31 @@ namespace SmartBandAlert3.Data
         }
 
 
+
+
+        public async Task SaveVictimAsync(Victim item, bool isNewItem = false)
+
+        {
+
+            if (isNewItem)
+            {
+
+                var obj = JsonConvert.SerializeObject(item, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
+                var request = new HttpRequestMessage(HttpMethod.Post, "https://sbat1.azurewebsites.net/api/victim/");
+                request.Content = new StringContent(obj, Encoding.UTF8, "application/json");
+
+                var data = client.SendAsync(request).Result;
+
+            }
+            else
+            {
+
+                //response = await client.PutAsync(uri, content);
+
+            }
+
+        }
+
+
     }
 }
