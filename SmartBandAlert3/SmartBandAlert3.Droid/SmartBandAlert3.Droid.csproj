@@ -118,6 +118,9 @@
       <HintPath>..\..\packages\Plugin.Permissions.1.2.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SmartBandAlert3">
+      <HintPath>..\SmartBandAlert3\bin\Debug\SmartBandAlert3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Json" />
@@ -236,12 +239,6 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SmartBandAlert3\SmartBandAlert3.csproj">
-      <Project>{0b3e7738-c2d5-4e5f-bdfe-fac2970b8cc8}</Project>
-      <Name>SmartBandAlert3</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="GCMClient">

@@ -14,13 +14,17 @@ namespace SmartBandAlert3.Data
         Task<List<User>> RefreshDataAsync();
 
         Task<List<User>> SearchUsersAsync(string text);
+
+        Task <Victim> SearchVictimAsync(string text);
         Task<List<FriendsList>> RefreshDataAsyncFriends();
 
         Task SaveTodoItemAsync(User item, bool isNewItem);
 
         Task SaveVictimAsync(Victim item, bool isNewItem);
 
-        Task DeleteTodoItemAsync(String userid, long friendid);
+        Task DeleteTodoItemAsync(String userid, String friendid);
+
+
 
     }
 }

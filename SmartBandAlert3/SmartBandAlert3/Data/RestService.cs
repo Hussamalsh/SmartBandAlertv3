@@ -89,7 +89,7 @@ namespace SmartBandAlert3.Data
 
 
 
-        public async Task DeleteTodoItemAsync(String userid, long friendid)
+        public async Task DeleteTodoItemAsync(String userid, String friendid)
 
         {
 
@@ -134,6 +134,13 @@ namespace SmartBandAlert3.Data
 
         }
 
+        public async Task<Victim> SearchVictimAsync(string text)
+        {
 
+            var data = client.GetStringAsync("http://sbat1.azurewebsites.net/api/victim/" + text).Result;
+            var victim =  JsonConvert.DeserializeObject<Victim>(data);
+
+            return victim;
+        }
     }
 }

@@ -25,9 +25,15 @@ namespace Backendt1.Controllers
         }
 
         // GET: api/Victim/5
-        public string Get(int id)
+        public Victim Get(String id)
         {
-            return "value";
+            VictimPersistence pp = new VictimPersistence();
+            Victim p = pp.getVictim(id);
+            if (p == null)
+            {
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
+            }
+            return p;
         }
 
         // POST: api/Victim
@@ -55,7 +61,7 @@ namespace Backendt1.Controllers
             // Sending the message so that all template registrations that contain "messageParam"
             // will receive the notifications. This includes APNS, GCM, WNS, and MPNS template registrations.
             Dictionary<string, string> templateParams = new Dictionary<string, string>();
-            templateParams["messageParam"] = value.UserName + " Need Help from you.";
+            templateParams["messageParam"] = value.UserName + " Need Help from you. The User ID =" + value.FBID;
 
             try
             {

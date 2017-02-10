@@ -101,6 +101,11 @@ namespace SmartBandAlert3.Droid
             if (!string.IsNullOrEmpty(message))
             {
                 CreateNotification("New Test!", "SmartBandAlert: " + message);
+                App.NotificationOn = true;
+                //string tobesearched = "ID = ";
+                App.VictimId = message.Split(new[] { "ID =" }, StringSplitOptions.None)[1];
+                //message.Substring(message.IndexOf(tobesearched) + tobesearched.Length);//message.("ID ="); ;
+
             }
         }
 

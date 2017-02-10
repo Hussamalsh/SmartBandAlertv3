@@ -150,7 +150,7 @@ namespace Backendt1
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 String sqlString = "INSERT INTO Friends (UserFBID, FriendFBID)"
-                    + "VALUES(" + personToSave.UserFBID + "," + personToSave.FriendFBID + ");";
+                    + "VALUES('" + personToSave.UserFBID + "','" + personToSave.FriendFBID + "');";
 
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sqlString, conn);
                 cmd.ExecuteNonQuery();

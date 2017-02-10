@@ -8,7 +8,7 @@ namespace SmartBandAlert3.Models
 {
     public class FriendsList
     {
-        public long FriendFBID { get; set; }
+        public String FriendFBID { get; set; }
         public String UserName { get; set; }
         public FriendsList(string n)
         {

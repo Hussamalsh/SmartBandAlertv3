@@ -2,6 +2,7 @@
 using SmartBandAlert3.Data;
 using SmartBandAlert3.Models;
 using SmartBandAlert3.Pages;
+using SmartBandAlert3.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,8 +56,7 @@ namespace SmartBandAlert3
 
             var data = client.GetStringAsync("http://sbat1.azurewebsites.net/api/user").Result;
             var teams = JsonConvert.DeserializeObject<IEnumerable<User>>(data);*/
-
-
+            //NotificationOn = false;
             UserManager = new UserManager(new RestService());
             FriendsManager = new FriendsManager(new RestService());
             VictimManager = new VictimManager(new RestService());
@@ -71,10 +71,16 @@ namespace SmartBandAlert3
 
         public void PresentMainPage()
         {
+            if (NotificationOn)
+            {
+                MainPage = new MapNavigationPage(VictimId);
+            }
+            else
+            {
+                MainPage = !IsLoggedIn ? (Page)new LoginPage() : new MainPage();
+            }
+                
 
-            MainPage = !IsLoggedIn ? (Page)new LoginPage() : new MainPage();
-
-            // MainPage = new LoginPage();
 
         }
 
@@ -94,6 +100,18 @@ namespace SmartBandAlert3
         }
 
         public static bool IsLoggedIn
+        {
+            get;
+            set;
+        }
+
+        public static bool NotificationOn
+        {
+            get;
+            set;
+        }
+
+        public static String VictimId
         {
             get;
             set;

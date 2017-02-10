@@ -28,6 +28,15 @@ namespace SmartBandAlert3.Data
 
             return restService.SaveVictimAsync(item, isNewItem);
 
+
+        }
+
+        public Task<Victim> SearchVictimAsync(string text)
+
+        {
+
+            return restService.SearchVictimAsync(text);
+
         }
 
 
