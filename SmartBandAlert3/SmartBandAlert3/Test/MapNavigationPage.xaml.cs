@@ -8,17 +8,21 @@ using System.Net;
 using Xamarin.Forms;
 using SmartBandAlert3.Models;
 
+using Plugin.Permissions.Abstractions;
+using Plugin.Permissions;
+
 namespace SmartBandAlert3.Test
 {
     public partial class MapNavigationPage : ContentPage
     {
-        
+
 
         public  MapNavigationPage(string victimId)
         {
             InitializeComponent();
 
             getVictim(victimId);
+
 
 
 
@@ -80,5 +84,17 @@ namespace SmartBandAlert3.Test
                 }
             }
         }
+
+
+
+
+
+
+
+
+
+        
+
+
     }
 }

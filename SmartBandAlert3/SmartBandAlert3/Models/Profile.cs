@@ -8,6 +8,18 @@ namespace SmartBandAlert3.Models
 {
     public class Profile
     {
+        public bool HaveSmartBand
+        {
+            get;
+            set;
+        }
+
+        public String BlegUID
+        {
+            get;
+            set;
+        }
+
         public string Username
         {
             get;

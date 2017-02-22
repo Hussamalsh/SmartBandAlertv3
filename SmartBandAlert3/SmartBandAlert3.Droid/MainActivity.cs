@@ -5,13 +5,14 @@ using Android.OS;
 using Gcm.Client;
 using Xamarin.Auth;
 using System.Linq;
+using Android.Media;
 
 namespace SmartBandAlert3.Droid
 {
     [Activity(Label = "SmartBandAlert3", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-
+        public static MediaPlayer _player;
         public static MainActivity CurrentActivity { get; private set; }
         protected override void OnCreate(Bundle bundle)
         {
@@ -21,8 +22,11 @@ namespace SmartBandAlert3.Droid
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            //if(!App.NotificationOn)
+                _player = MediaPlayer.Create(this, Resource.Raw.siren2);
 
             base.OnCreate(bundle);
+
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Xamarin.FormsMaps.Init(this, bundle);
@@ -37,6 +41,7 @@ namespace SmartBandAlert3.Droid
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
 
+           // _player.Stop();
             LoadApplication(new App());
 
 

@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using SmartBandAlert3.Data;
 using SmartBandAlert3.Models;
 using SmartBandAlert3.Pages;
@@ -44,12 +46,14 @@ namespace SmartBandAlert3
 
 
 
+
         //HttpClient client;
         public App()
         {
             InitializeComponent();
 
 
+           
             /*client = new HttpClient();
             client.DefaultRequestHeaders.Add("ZUMO-API-VERSION", "2.0.0");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -65,8 +69,14 @@ namespace SmartBandAlert3
             _profileManager = profileManager;
             LoadProfile();
 
+
+           // MainPage = new BleTest1Page(); // test ble 
+
             PresentMainPage();
         }
+
+
+
 
 
         public void PresentMainPage()
@@ -91,12 +101,16 @@ namespace SmartBandAlert3
             _profile.FBusername = FacebookName;
             _profile.FBimage = ProfilePic;
             _profile.FBid = FacebookId;
+            _profile.HaveSmartBand = HaveSmartBand;
+            _profile.BlegUID = BlegUID;
             _profileManager.SaveProfile(_profile);
         }
         void LoadProfile()
         {
             _profile = _profileManager.LoadProfile();
             FacebookId = _profile.FBid;
+            HaveSmartBand = _profile.HaveSmartBand;
+            BlegUID = _profile.BlegUID;
         }
 
         public static bool IsLoggedIn
@@ -117,6 +131,18 @@ namespace SmartBandAlert3
             set;
         }
 
+
+        public static bool HaveSmartBand
+        {
+            get;
+            set;
+        }
+
+        public static String BlegUID
+        {
+            get;
+            set;
+        }
         public static String FacebookId
         {
             get;

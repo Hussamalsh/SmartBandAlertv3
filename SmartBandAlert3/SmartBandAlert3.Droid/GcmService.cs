@@ -35,9 +35,7 @@ namespace SmartBandAlert3.Droid
     {
         public static string RegistrationToken { get; private set; }
 
-        public GcmService()
-            : base(PushHandlerBroadcastReceiver.SENDER_IDS) { }
-
+        public GcmService(): base(PushHandlerBroadcastReceiver.SENDER_IDS) { }
         protected override void OnRegistered(Context context, string registrationToken)
         {
             Log.Verbose("PushHandlerBroadcastReceiver", "GCM Registered: " + registrationToken);
@@ -105,7 +103,7 @@ namespace SmartBandAlert3.Droid
                 //string tobesearched = "ID = ";
                 App.VictimId = message.Split(new[] { "ID =" }, StringSplitOptions.None)[1];
                 //message.Substring(message.IndexOf(tobesearched) + tobesearched.Length);//message.("ID ="); ;
-
+                MainActivity._player.Start();
             }
         }
 
@@ -131,6 +129,7 @@ namespace SmartBandAlert3.Droid
 
             // Show the notification
             notificationManager.Notify(1, notification);
+            
         }
     }
 }

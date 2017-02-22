@@ -15,7 +15,6 @@ namespace SmartBandAlert3.Data
       
 
         public FriendsManager(IRestService service)
-
         {
 
             restService = service;
@@ -25,7 +24,6 @@ namespace SmartBandAlert3.Data
 
 
         public Task<List<FriendsList>> GetTasksAsync()
-
         {
 
             return restService.RefreshDataAsyncFriends();
@@ -35,7 +33,6 @@ namespace SmartBandAlert3.Data
 
 
         public Task SaveTaskAsync(User item, bool isNewItem = false)
-
         {
 
             return restService.SaveTodoItemAsync(item, isNewItem);
@@ -45,7 +42,6 @@ namespace SmartBandAlert3.Data
 
 
         public Task DeleteTaskAsync(FriendsList item)
-
         {
 
             return restService.DeleteTodoItemAsync(App.FacebookId, item.FriendFBID);

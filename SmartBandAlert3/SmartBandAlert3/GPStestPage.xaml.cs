@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Plugin.Geolocator;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using SmartBandAlert3.Models;
@@ -18,11 +17,17 @@ namespace SmartBandAlert3
     public partial class GPStestPage : ContentPage
     {
 
+        
+
         public static Victim victim;
         public GPStestPage()
         {
             victim = new Victim();
+
+
             InitializeComponent();
+
+
         }
 
         async void Button_OnClicked(object sender, EventArgs e)
@@ -83,6 +88,13 @@ namespace SmartBandAlert3
             victim.Adress = "" + possibleAddresses.FirstOrDefault();
 
 
+
+
+
+
+
+
+
         }
         IProfileManager _profileManager;
         IProfileManager profileManager = new ProfileManager();
@@ -101,11 +113,6 @@ namespace SmartBandAlert3
 
 
         }
-
-
-
-
-
 
 
 

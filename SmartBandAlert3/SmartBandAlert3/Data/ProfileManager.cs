@@ -20,6 +20,8 @@ namespace SmartBandAlert3.Data
             App.Current.Properties[nameof(Profile.FBusername)] = profile.FBusername;
             App.Current.Properties[nameof(Profile.FBimage)] = profile.FBimage;
             App.Current.Properties[nameof(Profile.FBid)] = profile.FBid;
+            App.Current.Properties[nameof(Profile.HaveSmartBand)] = profile.HaveSmartBand;
+            App.Current.Properties[nameof(Profile.BlegUID)] = profile.BlegUID;
 
             App.Current.Properties[nameof(Profile.Firstname)] = profile.Firstname;
             App.Current.Properties[nameof(Profile.NotifyNews)] = profile.NotifyNews;
@@ -45,6 +47,14 @@ namespace SmartBandAlert3.Data
 
                 FBid = App.Current.Properties.ContainsKey(nameof(Profile.FBid))
                     ? App.Current.Properties[nameof(Profile.FBid)] as string
+                    : string.Empty,
+
+
+                HaveSmartBand = App.Current.Properties.ContainsKey(nameof(Profile.HaveSmartBand))
+                    ? (bool)App.Current.Properties[nameof(Profile.HaveSmartBand)]
+                    : false,
+                BlegUID = App.Current.Properties.ContainsKey(nameof(Profile.BlegUID))
+                    ? App.Current.Properties[nameof(Profile.BlegUID)] as string
                     : string.Empty,
 
 
